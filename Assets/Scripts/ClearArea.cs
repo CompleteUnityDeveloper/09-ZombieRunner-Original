@@ -4,7 +4,7 @@ using System.Collections;
 public class ClearArea : MonoBehaviour {
 
 	public float timeSinceLastTrigger = 0f;
-
+	
 	// Use this for initialization
 	void Start () {
 	
@@ -15,8 +15,7 @@ public class ClearArea : MonoBehaviour {
 		timeSinceLastTrigger += Time.deltaTime;
 
 		if (timeSinceLastTrigger > 1f) {
-			Debug.Log ("Found clear area");
-
+			SendMessageUpwards ("OnFindClearArea");
 		}
 	}
 
