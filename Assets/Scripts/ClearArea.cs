@@ -4,22 +4,22 @@ using System.Collections;
 public class ClearArea : MonoBehaviour {
 
 	public float timeSinceLastTrigger = 0f;
-	
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
+
+	private bool foundClearArea = false;
+
 	// Update is called once per frame
 	void Update () {
 		timeSinceLastTrigger += Time.deltaTime;
 
-		if (timeSinceLastTrigger > 1f && Time.realtimeSinceStartup > 10f) {
+		if (timeSinceLastTrigger > 1f && Time.realtimeSinceStartup > 10f && !foundClearArea) {
 			SendMessageUpwards ("OnFindClearArea");
+			foundClearArea = true;
 		}
 	}
 
-	void OnTriggerStay () {
-		timeSinceLastTrigger = 0f;
+	void OnTriggerStay (Collider collider) {
+		if (collider.tag != "Player") {
+			timeSinceLastTrigger = 0f;
+		}
 	}
 }

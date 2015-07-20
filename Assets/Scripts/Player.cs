@@ -3,38 +3,24 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
-	public Helicopter helicopter;
 	public Transform playerSpawnPoints; // The parent of the spawn points
-
-	public AudioClip whatHappened;
-
+	
 	private bool reSpawn = false;
 	private Transform[] spawnPoints;
-	private bool lastToggle = false;
-	private AudioSource innerVoice;
+	private bool lastRespawnToggle = false;
 
 	// Use this for initialization
 	void Start () {
 		spawnPoints = playerSpawnPoints.GetComponentsInChildren<Transform> ();
-
-		AudioSource[] audioSources = GetComponents<AudioSource> ();
-		foreach (AudioSource audioSource in audioSources) {
-			if (audioSource.priority == 1) {
-				innerVoice = audioSource;
-			}
-		}
-
-		innerVoice.clip = whatHappened;
-		innerVoice.Play ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (lastToggle != reSpawn) {
+		if (lastRespawnToggle != reSpawn) {
 			Respawn ();
 			reSpawn = false;
 		} else {
-			lastToggle = reSpawn;
+			lastRespawnToggle = reSpawn;
 		}
 	}
 
@@ -44,10 +30,11 @@ public class Player : MonoBehaviour {
 	}
 
 	void OnFindClearArea () {
-		Debug.Log ("Found clear area in player");
-		helicopter.Call ();
-		// Deploy flare
-		// Start spawning zombies
+		Invoke ("DropFlare", 3f);
+	}
+
+	void DropFlare () {
+		// Drop a flare
 	}
 
 }
