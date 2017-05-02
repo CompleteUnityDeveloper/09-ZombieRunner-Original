@@ -191,6 +191,3 @@
 The end state of our Zombie Runner project is attached for download.
 
 ### Section 9 Wrap-Up ###
-
----
-Find out more about our [Complete Unity Developer Course](https://www.udemy.com/unitycourse?couponCode=GitHubDiscount).
