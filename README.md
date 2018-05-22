@@ -1,3 +1,10 @@
+# Complete Unity Developer - Section 9 - Zombie Runner
+
+This is the [Complete Unity Developer](http://gdev.tv/cudgithub) - one of the most successful e-learning courses on the internet! Completely re-worked from scratch with brand-new projects and our latest teaching techniques. You will benefit from the fact we have already taught over 360,336 students game development, many shipping commercial games as a result.
+
+You're welcome to download, fork or do whatever else legal with all the files! The real value is in our huge, high-quality online tutorials that accompany this repo. You can check out the course here: [Complete Unity Developer](http://gdev.tv/cudgithub)
+
+## In This Section
 ### Introduction to Zombie Runner ###
 
 + **Creating a stunning 3D terrain.**
